@@ -9,9 +9,9 @@ const Burger = (props) => {
         return <BurgerIngredient key={key + index} type={key} />;
       });
     })
-    .reduce((acc, item) => {
-      return acc.concat(item);
-    }, []);
+    .flat();
+
+  console.log(ingredients);
 
   if (ingredients.length === 0) {
     ingredients = <p>Please start adding ingredients!</p>;
